@@ -36,7 +36,7 @@ Route::get('/customer', function() {
 /**
  * Main admin routes
  */
-Route::middleware(['auth:web'])->namespace('Admin')->prefix('xadmin')->group(function () {
+Route::namespace('Admin')->prefix('xadmin')->group(function () {
     Route::any('/files/{action}', 'FilesController')->name('files');
     Route::get('/excel-sample', 'SampleController@excelSample')->name('excelSample');
     Route::any('/dashboard/{action}', 'DashboardController')->name('dashboard');
